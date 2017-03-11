@@ -37,4 +37,10 @@ describe('UserComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('p').textContent).toContain(component.user.name);
   });
+
+  it('shouldn\'t display the user name if user is logged in', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).not.toContain(component.user.name);
+  });
 });
