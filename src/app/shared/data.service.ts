@@ -1,5 +1,5 @@
 export class DataService {
-    getDetails() {
+    getDetails(): Promise<string> {
         const resultPromise = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve('Data');
