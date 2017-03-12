@@ -12,7 +12,8 @@ describe('AppComponent', () => {
         UserComponent
       ],
     });
-    TestBed.compileComponents();
+    // WebPack developers need not call compileComponents because it inlines templates and css as part of the automated build process that precedes running the test.
+    // TestBed.compileComponents();
   });
 
   it('should create the app', async(() => {
