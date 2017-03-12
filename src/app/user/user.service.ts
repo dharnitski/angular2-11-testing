@@ -3,6 +3,6 @@ export class UserService {
         name: 'Dmitry'
     };
 
-    isLoggedIn: false;
+    isLoggedIn = false;
 
 }
