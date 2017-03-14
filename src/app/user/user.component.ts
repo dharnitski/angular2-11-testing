@@ -19,5 +19,4 @@ export class UserComponent implements OnInit {
     this.user = this.userService.user;
     this.dataService.getDetails().then(data => this.data = data);
   }
-
 }

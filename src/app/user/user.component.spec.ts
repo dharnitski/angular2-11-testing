@@ -10,17 +10,12 @@ describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [UserComponent]
-    })
-      .compileComponents();
-  }));
-
-  beforeEach(() => {
+    });
     fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -28,6 +23,7 @@ describe('UserComponent', () => {
   });
 
   it('should use the user name from the service', () => {
+    fixture.detectChanges();
     const userService = fixture.debugElement.injector.get(UserService);
     expect(userService.user.name).toEqual(component.user.name);
   });
@@ -59,7 +55,8 @@ describe('UserComponent', () => {
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(component.data).toBe('Data1');
+      fixture.detectChanges();
+      expect(component.data).toBe('Data');
     });
   }));
 
@@ -69,7 +66,8 @@ describe('UserComponent', () => {
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
     tick();
-    expect(component.data).toBe('Data1');
+    fixture.detectChanges();
+    expect(component.data).toBe('Data');
   }));
 
 });

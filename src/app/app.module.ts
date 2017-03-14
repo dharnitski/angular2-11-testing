@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { TwainComponent } from './twain/twain.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    TwainComponent
   ],
   imports: [
     BrowserModule,
